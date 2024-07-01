@@ -8,6 +8,8 @@ The CLI tool assumes the user is starting from a clean slate and configures new 
 
     VPC subnets, routing, etc.
 
+The preconfigured EC2 and RDS templates can be edited in the tf_aws_gen.py script under the write_terraform_db_config and write_terraform_config functions.
+
 Tool Requirements:
 
 python
