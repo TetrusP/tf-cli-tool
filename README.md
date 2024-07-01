@@ -24,21 +24,21 @@ Tool instructions:
 
 The CLI has 4 options:
 
-apply, generate, destroy, plan
+    apply, generate, destroy, plan
 
 To generate Terraform configs run: 
 
-%python3 main.py generate ##And follow the prompts
+    %python3 main.py generate ##And follow the prompts
 
 To Plan a Terraform config run:
 
-%python3 main.py plan 
+    %python3 main.py plan ##And follow the prompts
 
 To Apply a Terraform config run:
 
-%python3 main.py apply
+    %python3 main.py apply ##And follow the prompts
 
 To Destroy the created resources run:
 
-%python3 main.py destroy
+    %python3 main.py destroy ##And follow the prompts
 
