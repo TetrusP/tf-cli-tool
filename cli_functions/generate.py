@@ -12,8 +12,6 @@ def generate():
     ##If user chooses aws, execute aws tf generator
     if compute_platform == 'aws':
 
-        #terraform_dir = '/Users/tetrus/solace-exam'
-
         print("Here are the available regions you can generate in")
 
         setup_aws_credentials()

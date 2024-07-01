@@ -15,12 +15,18 @@ Tool Requirements:
 python
 terraform
 
+Update terraform directory in plan.py
+
+    # Define the path to your Terraform configuration directory
+    terraform_dir = '<Input Path here>'
+
 
 Tool improvements:
 
 The tool can be further improved to manage the state file in a more secure fashion (for the sake of a proof of concept I've kept the state file to be managed locally). The tool can fetch all resource options dynamically instead of providing preconfigured static options. The tool can also be improved to include Terraform output and variables files to simplify the config generation functions and reusability. 
 
-Additionally, the tool can be further streamlined by adding a force feature which reduces the number of prompts the user will need to input. This will enable further automation if a user wants to incorporate this into their infrastructure workflows.
+Additionally, the tool can be further streamlined by adding a force feature which reduces the number of prompts the user will need to input. This will enable further automation if a user wants to incorporate this into their infrastructure workflows. The tool can also be configured to ask the user where they want their working terraform directory to be instead of having to manually add the absolute path in the plan.py function. A generic .env file would be beneficial
+
 
 Tool instructions:
 

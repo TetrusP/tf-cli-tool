@@ -4,7 +4,7 @@ import os
 
 def plan():
     # Define the path to your Terraform configuration directory
-    terraform_dir = '/Users/tetrus/solace-exam'
+    terraform_dir = '<Input Path here>'
 
     from .generate import generate
 
