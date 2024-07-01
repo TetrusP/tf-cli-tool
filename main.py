@@ -1,6 +1,7 @@
 ## Main entry for CLI tool
 
 ##python library parser for cli arguments
+import argparse
 
 ## import functions
 from cli_functions.apply import apply
@@ -10,32 +11,33 @@ from cli_functions.plan import plan
 
 ##Main Function
 def main():
-    while True:
-        # Display the menu options
-        print("\nCLI for generating AWS Terraform Files and Applying them")
-        print("1: Generate Terraform Config")
-        print("2: Apply Terraform Config")
-        print("3: Plan Terraform Deployment")
-        print("4: Destroy Terraform Resources")
-        print("5: Exit")
 
-        # Get user choice
-        choice = input("Please choose an option (1-5): ")
+    ## CLI description
+    cli = argparse.ArgumentParser(description='CLI for generating AWS Terraform Files and Applying them')
 
-        # Execute based on choice
-        if choice == '1':
-            generate()
-        elif choice == '2':
-            apply()
-        elif choice == '3':
-            plan()
-        elif choice == '4':
-            destroy()
-        elif choice == '5':
-            print("Exiting program.")
-            break
-        else:
-            print("Invalid option, please try again.")
+    ## CLI Options
+    cli.add_argument('options', choices=['apply', 'generate', 'destroy', 'plan', ], help='CLI Options')
+
+    ## CLI Chosen Options
+    cli_inputs = cli.parse_args()
+
+    ## CLI Generate TF Config from Options
+    if cli_inputs.options == 'generate':
+        generate()
+
+    ## CLI TF Apply Generated Config
+    if cli_inputs.options == 'apply':
+        apply()
+
+    ## CLI TF Plan Generated Config
+    if cli_inputs.options == 'plan':
+        plan()
+
+    ## CLI TF Destroy Generated Resources
+    if cli_inputs.options == 'destroy':
+        destroy()
+
+    else:
+        print("Choose valid option") 
 
 main() 
-        
